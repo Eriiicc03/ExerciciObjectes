@@ -112,3 +112,22 @@ console.log(nomDeEmpresa);
 console.log(detalls);
 
 // Exercici 7: Còpia profunda
+console.log("Exercici 7");
+
+const joc = {
+  titol: "Zelda",
+  dades: {
+    horesJugades: 45,
+    inventari: ["Espasa", "Escut"],
+  },
+};
+
+const jocClon = structuredClone(joc);
+
+jocClon.dades.inventari.push("Arc");
+
+console.log("Original", joc);
+console.log("Clon", jocClon);
+//JSON.parse(JSON.stringify()) passa l'objecte a text i despres el torna a crear, pero JSON nomes guarda dades simples
+//si l'objecte te funcions es perden, perque JSON no les pot guardar i les ignora sense avisar
+//si te un Date es converteix en un string, i al tornar-lo a crear ja no es una data sino un text
