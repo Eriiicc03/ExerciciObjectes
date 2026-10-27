@@ -25,6 +25,13 @@ console.log("Idioma client sense definir: ", client.perfil?.idioma);
 console.log("Idioma client: ", idiomaClient);
 
 // Exercici 3: Modificació dinàmica i clons superficials
+console.log("Exercici 3");
+producte.estoc = 50;
+delete producte["detalls de l'enviament"];
+const copia = { ...producte };
+
+console.log("Afegim estoc i eliminem detalls: ", producte);
+console.log("Copia: ", copia);
 
 // Exercici 4: Recorregut d'objecte
 
