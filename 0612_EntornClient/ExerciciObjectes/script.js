@@ -45,7 +45,25 @@ console.log("Original: ", producte);
 //per aixo es diu copia superficial, nomes copia el primer nivell
 
 // Exercici 4: Recorregut d'objecte
+const notes = {
+  matematiques: 8.5,
+  programacio: 9.0,
+  sistemes: 6.5,
+  idiomes: 7.2,
+};
 
+console.log("Exercici 4");
+const moduls = Object.keys(notes);
+console.log("Moduls: ", moduls);
+
+for (const [asignatura, nota] of Object.entries(notes)) {
+  console.log(`Mòdul: ${asignatura} -> Nota: ${nota}`);
+}
+
+const llistaNotes = Object.values(notes);
+const suma = llistaNotes.reduce((total, nota) => total + nota, 0);
+const mitjana = suma / llistaNotes.length;
+console.log("Mitjana: ", mitjana);
 // Exercici 5: Immutabilitat (freeze vs seal)
 
 // Exercici 6: Destructuring
