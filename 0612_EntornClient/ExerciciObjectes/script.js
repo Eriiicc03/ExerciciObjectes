@@ -4,6 +4,9 @@ const producte = {
   nom: "aigua",
   preu: 2,
   "detalls de l'enviament": "Carrer Barcelo",
+  informacio: {
+    origen: "Espanya",
+  },
 };
 console.log("Exercici 1");
 console.log("producte", producte);
@@ -32,6 +35,14 @@ const copia = { ...producte };
 
 console.log("Afegim estoc i eliminem detalls: ", producte);
 console.log("Copia: ", copia);
+//modifiquem la copia
+copia.preu = 13;
+copia.informacio.origen = "França";
+console.log("Copia amb preu modificat: ", copia);
+console.log("Original: ", producte);
+//si canvio una propietat primitiva de la copia (com el preu) l'original no canvia, perque l'spread copia el valor
+//si canvio una cosa d'un objecte de dins (com informacio.origen) l'original tambe canvia, perque l'spread nomes copia la referencia d'aquest objecte i els dos apunten al mateix
+//per aixo es diu copia superficial, nomes copia el primer nivell
 
 // Exercici 4: Recorregut d'objecte
 
