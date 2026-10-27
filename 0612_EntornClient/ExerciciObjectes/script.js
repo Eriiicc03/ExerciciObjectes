@@ -65,7 +65,50 @@ const suma = llistaNotes.reduce((total, nota) => total + nota, 0);
 const mitjana = suma / llistaNotes.length;
 console.log("Mitjana: ", mitjana);
 // Exercici 5: Immutabilitat (freeze vs seal)
+console.log("Exercici 5");
+const configuracio = {
+  url: "aulavirtual.iesthosicodina.cat",
+  port: 443,
+};
+Object.freeze(configuracio);
 
+configuracio.port = 555;
+configuracio.url = "youtube.com";
+
+console.log(configuracio);
+
+const usuariSessio = {
+  username: "eric",
+  estat: "actiu",
+};
+Object.seal(usuariSessio);
+
+usuariSessio.estat = "inactiu";
+usuariSessio.idioma = "catala";
+delete usuariSessio.username;
+console.log(usuariSessio);
 // Exercici 6: Destructuring
+console.log("Exercici 6");
+
+const empresa = {
+  nom: "TechSolutions",
+  ubicacio: { ciutat: "Girona", codiPostal: "17001" },
+  directors: ["Laura", "Albert"],
+};
+
+const {
+  ubicacio: { ciutat },
+} = empresa;
+
+console.log(ciutat);
+
+const { nom: nomEmpresa } = empresa;
+
+console.log(nomEmpresa);
+
+const { nom: nomDeEmpresa, ...detalls } = empresa;
+
+console.log(nomDeEmpresa);
+console.log(detalls);
 
 // Exercici 7: Còpia profunda
